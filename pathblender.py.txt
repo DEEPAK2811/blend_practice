@@ -1,0 +1,59 @@
+//add objects
+
+from bge import logic
+
+cont = logic.getCurrentController() # Get the Python controller running the script
+
+obj = cont.owner #Get the object that has the controller
+
+sce = obj.scene # Get the scene the object is in 
+#(this is valid if you have a recent build of Blender)
+
+obj1 = sce.addObject("Cube", obj) # The addObject() function returns a 
+#reference to the object instantiated. It adds the 
+#object specified ("Cube") with the position, orientation, and scale of
+#the reference object used (obj, or the object running this script, in this case)
+
+obj1.applyMovement([2, 0, 0], True)
+
+# Or alternatively:
+
+obj.worldPosition.x += 2.0 # This is global movement, though. 
+
+#To do local movement, you would have to grab the object's world 
+#orientation in a column format - just stick with the applyMovement() function if you need local movement for now.
+
+
+
+
+
+//switch-case statement
+def f(x):
+    return {
+        'a': 1,
+        'b': 2,
+    }.get(x, 9)  
+
+//
+scene = bge.logic.getCurrentScene()
+path = "c:\\.....\\name.blend"
+bge.logic.LibLoad(path,'Scene')
+
+
+scene = bge.logic.getCurrentScene()
+obj = scene.objects["Cube"]
+bge.logic.LibLoad("TestServer.blend", "rock1")
+obj.replaceMesh("TestServer")
+
+
+
+scene = bge.logic.getCurrentScene()
+object = scene.addObject("Sphere","Sphere")
+object.worldPosition = [1,1,1]
+
+
+#define add
+add = bge.logic.getCurrentScene().addObject
+
+#add object
+add('objectName',' location',0)
